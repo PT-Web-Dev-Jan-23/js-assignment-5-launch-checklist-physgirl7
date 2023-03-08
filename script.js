@@ -12,33 +12,32 @@ window.addEventListener("load", function() {
         let cargoLevel = document.querySelector("input[name = cargoMass]").value;
         let list = [];
 
-
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
 
     });
     
 
 
-   let listedPlanets;
+    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse = myFetch();
-   listedPlanetsResponse.then(function (result) {
-       listedPlanets = result;
-       console.log(listedPlanets);
-   }).then(function () {
-       console.log(listedPlanets);
+    let listedPlanetsResponse = myFetch();
+    listedPlanetsResponse.then(function (result) {
+        listedPlanets = result;
+        console.log(listedPlanets);
+    }).then(function () {
+        console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-       let planetObject = pickPlanet(listedPlanets);
-       console.log(planetObject);
-       let planetName = planetObject.name;
-       let planetDiameter = planetObject.diameter;
-       let planetStar = planetObject.star;
-       let planetDistance = planetObject.distance;
-       let planetMoons = planetObject.moons;
-       let planetImg = planetObject.image;
+        let planetObject = pickPlanet(listedPlanets);
+        console.log(planetObject);
+        let planetName = planetObject.name;
+        let planetDiameter = planetObject.diameter;
+        let planetStar = planetObject.star;
+        let planetDistance = planetObject.distance;
+        let planetMoons = planetObject.moons;
+        let planetImg = planetObject.image;
 
-       addDestinationInfo(document, planetName, planetDiameter, planetStar, planetDistance, planetMoons, planetImg)
+        addDestinationInfo(document, planetName, planetDiameter, planetStar, planetDistance, planetMoons, planetImg)
        
-   })
+    })
    
 });
